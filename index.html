@@ -1,9 +1,134 @@
-<!doctype html>
-<html>
-	<head>
-		<title>Hello World!</title>
-	</head>
-	<body>
-		<h1>Hi , Hello </h1>
-	</body>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Youtube Clone</title>
+
+        <style>
+            /*
+                - justify-content: space-around => 요소들 사이에 동일한 간격 적용
+             */
+            .header { display: flex; flex-direction: row;
+                      justify-content: space-around;
+
+                      background-color: #212121;
+                      border-bottom-width: 1px;
+                      border-bottom-style: solid;
+                      border-bottom-color: #4d4d4d; }
+            .left-section { display: flex; }
+            /*
+                margin/padding 작성 방식에 따른 적용 범위
+                 ex) padding: 1px 2px 3px 4px; => top right bottom left
+                     padding: 5px 10px; => top/bottom right/left
+                     padding: 3px;      => top/bottom/right/left 모두 적용
+             */
+            .hambuger-menu { height:24px; padding: 21px 12px; }
+            .youtube-logo { height: 66px; }
+
+            .middle-section { display: flex; align-items: center; 
+                            margin-left: 70px; margin-right: 35px; }
+                            /* 
+                                - border-radius : border부분을 둥글게 처리
+                                  ex) 20px 0px 0px 20px; => top-left top-right bottom-right bottom-left
+                                  ex) 20px 10px;         => top-left/bottom-right top-right/bottom-left
+                                  ex) 20px;              => 모두 (top-left/top-right/bottom-right/bottom-left)
+                             */
+            .search-bar { height: 34px; border-radius: 20px 0px 0px 20px;
+                        background: #323232; border: 1px solid #4d4d4d; }
+            .search-button { height: 38px; width: 65px; 
+                        border-radius: 0px 20px 20px 0px;
+                        background: #323232; border: 1px solid #4d4d4d;
+                        cursor: pointer; }
+            .search-icon { height: 25px; }
+            .tooltip {
+                position: absolute;
+                padding-left: 10px;
+                font-size: 16px;
+                color: white;   /* 글자 색 변경 */
+                bottom: -30px;
+                border-radius: 2px;
+
+                opacity: 0;       /* 불투명도 속성*/
+                transition: opacity 0.2s; /* 애니메이션 관련 속성 */
+                pointer-events: none;     /* 마우스 포인터 이벤트에 대상이 되지 않음 */
+            }
+            .search-button:hover .tooltip { opacity: 1; }
+            /*
+                - align-items : 세로축 정렬
+                - justify-content : 가로축 정렬
+            */
+            .right-section { width: 150px; display: flex; 
+                        align-items: center; justify-content: center; }
+            .user-icon { height: 36px; }
+
+            .sidebar { width: 20%; background-color: #212121; padding: 2% 0; }
+            .sidebar-link {
+                height: 55px;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                margin-left: 15px;
+            }
+            .sidebar-link:hover {
+                background-color: #4d4d4d;
+                margin-right: 15px;
+            }
+            .sidebar-link div { display: inline-block; margin-left: 15px;
+                                color: white; font-size: 14px; }
+            .sidebar-link img { height: 37px; margin-bottom: 3px; }
+        </style>
+    </head>
+    <body>
+        <!-- 시맨틱 태그 : 의미를 부여한 태그 -->
+        <!-- 
+            * header tag : 페이지 상단에 소개 및 탐색에 도움을 주는 콘텐츠 영역 
+                           제목/로고/검색 등 표시(작성)
+        -->
+        <header class="header">
+            <div class="left-section">
+                <img class="hambuger-menu" src="assets/icon/hamburger-menu-icon.svg" alt="메뉴버튼" />
+                <img class="youtube-logo" src="assets/icon/youtube-logo-icon.svg" alt="유튜브로고" />
+            </div>
+            <div class="middle-section">
+                <input type="text" class="search-bar" placeholder="검색" />
+                <button class="search-button">
+                    <img class="search-icon" src="assets/icon/search-icon.svg" />
+                    <div class="tooltip">검색</div>
+                </button>
+            </div>
+            <div class="right-section">
+                <img class="user-icon" src="assets/icon/user-icon.svg" />
+            </div>
+        </header>
+        <!--
+            * nav(navigation) tag : 다른 페이지 연결을 의미
+                                    메뉴/목차/색인 등에 사용
+        -->
+        <nav class="sidebar">
+            <div class="sidebar-link">
+                <img class="home-icon" src="assets/icon/home-icon.svg" />
+                <div>홈</div>
+            </div>
+            <div class="sidebar-link">
+                <img class="shorts-icon" src="assets/icon/shorts-icon.svg" />
+                <div>Shorts</div>
+            </div>
+            <div class="sidebar-link">
+                <img class="subs-icon" src="assets/icon/subs-icon.svg" />
+                <div>구독</div>
+            </div>
+            <div class="sidebar-link">
+                <img class="history-icon" src="assets/icon/history-icon.svg" />
+                <div>시청 기록</div>
+            </div>
+        </nav>
+        <!--
+            * main tag : 콘텐츠 내용을 표시하는 영역
+                         제목/검색/메뉴 등은 포함하지 않도록 함
+        -->
+        <main>
+
+        </main>
+    </body>
 </html>
