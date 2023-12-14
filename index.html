@@ -4,79 +4,27 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Youtube Clone</title>
+        <!-- 
+            * link tag : 현재 문서에 외부 리소스를 연결할 때 사용.
+                         스타일 시트 연결 시 많이 사용.
+         -->
+        <link rel="stylesheet" href="assets/style/header.css" />
+        <link rel="stylesheet" href="assets/style/sidebar.css" />
+        <link rel="stylesheet" href="assets/style/video.css" />
 
         <style>
-            /*
-                - justify-content: space-around => 요소들 사이에 동일한 간격 적용
-             */
-            .header { display: flex; flex-direction: row;
-                      justify-content: space-around;
+            body {
+                    margin:0;
+                    
+                    background-color: #181818;
+                    color: white;
 
-                      background-color: #212121;
-                      border-bottom-width: 1px;
-                      border-bottom-style: solid;
-                      border-bottom-color: #4d4d4d; }
-            .left-section { display: flex; }
-            /*
-                margin/padding 작성 방식에 따른 적용 범위
-                 ex) padding: 1px 2px 3px 4px; => top right bottom left
-                     padding: 5px 10px; => top/bottom right/left
-                     padding: 3px;      => top/bottom/right/left 모두 적용
-             */
-            .hambuger-menu { height:24px; padding: 21px 12px; }
-            .youtube-logo { height: 66px; }
-
-            .middle-section { display: flex; align-items: center; 
-                            margin-left: 70px; margin-right: 35px; }
-                            /* 
-                                - border-radius : border부분을 둥글게 처리
-                                  ex) 20px 0px 0px 20px; => top-left top-right bottom-right bottom-left
-                                  ex) 20px 10px;         => top-left/bottom-right top-right/bottom-left
-                                  ex) 20px;              => 모두 (top-left/top-right/bottom-right/bottom-left)
-                             */
-            .search-bar { height: 34px; border-radius: 20px 0px 0px 20px;
-                        background: #323232; border: 1px solid #4d4d4d; }
-            .search-button { height: 38px; width: 65px; 
-                        border-radius: 0px 20px 20px 0px;
-                        background: #323232; border: 1px solid #4d4d4d;
-                        cursor: pointer; }
-            .search-icon { height: 25px; }
-            .tooltip {
-                position: absolute;
-                padding-left: 10px;
-                font-size: 16px;
-                color: white;   /* 글자 색 변경 */
-                bottom: -30px;
-                border-radius: 2px;
-
-                opacity: 0;       /* 불투명도 속성*/
-                transition: opacity 0.2s; /* 애니메이션 관련 속성 */
-                pointer-events: none;     /* 마우스 포인터 이벤트에 대상이 되지 않음 */
-            }
-            .search-button:hover .tooltip { opacity: 1; }
-            /*
-                - align-items : 세로축 정렬
-                - justify-content : 가로축 정렬
-            */
-            .right-section { width: 150px; display: flex; 
-                        align-items: center; justify-content: center; }
-            .user-icon { height: 36px; }
-
-            .sidebar { width: 20%; background-color: #212121; padding: 2% 0; }
-            .sidebar-link {
-                height: 55px;
-                display: flex;
-                align-items: center;
-                cursor: pointer;
-                margin-left: 15px;
-            }
-            .sidebar-link:hover {
-                background-color: #4d4d4d;
-                margin-right: 15px;
-            }
-            .sidebar-link div { display: inline-block; margin-left: 15px;
-                                color: white; font-size: 14px; }
-            .sidebar-link img { height: 37px; margin-bottom: 3px; }
+                    padding-top: 80px;
+                    padding-left: 22%;
+                    padding-right: 22px;
+                    font-family: 'Noto Sans KR', sans-serif;                    
+                 }
+            p { margin: 0; }
         </style>
     </head>
     <body>
@@ -128,7 +76,83 @@
                          제목/검색/메뉴 등은 포함하지 않도록 함
         -->
         <main>
+            <!--
+                * section tag : 콘텐츠를 주제별로 묶을 때 사용하는 태그
+            -->
+            <section class="video-grid">
+                <div class="video-preview">
+                    <div class="thumnail-row">
+                        <img class="thumnail" src="assets/image/thumnail.png" />
+                        <div class="video-time">3:51</div>
+                    </div>
 
+                    <div class="video-info-grid">
+                        <div class="channel-icon">
+                            <img class="user-icon" src="assets/icon/user-icon.svg" />
+                        </div>
+                        <div class="video-info">
+                            <p class="video-title">빵빵이의 포장마차~!</p>
+                            <p class="video-author">빵빵이의 일상</p> 
+                            <p class="video-stats">조회수 830만회 &#183; 4개월전</p> <!-- &#183; : HTML 특수문자 중 middel dot (·)-->
+                        </div>
+                    </div>
+                </div>
+                <div class="video-preview">
+                    <div class="thumnail-row">
+                        <img class="thumnail" src="assets/image/thumnail.png" />
+                        <div class="video-time">3:51</div>
+                    </div>
+
+                    <div class="video-info-grid">
+                        <div class="channel-icon">
+                            <img class="user-icon" src="assets/icon/user-icon.svg" />
+                        </div>
+                        <div class="video-info">
+                            <p class="video-title">빵빵이의 포장마차~!</p>
+                            <p class="video-author">빵빵이의 일상</p> 
+                            <p class="video-stats">조회수 830만회 &#183; 4개월전</p> <!-- &#183; : HTML 특수문자 중 middel dot (·)-->
+                        </div>
+                    </div>
+                </div> 
+                <div class="video-preview">
+                    <div class="thumnail-row">
+                        <img class="thumnail" src="assets/image/thumnail.png" />
+                        <div class="video-time">3:51</div>
+                    </div>
+
+                    <!--
+                        .channel-icon img : channel-icon 클래스 내 모든 img 태그
+                        .channel-icon > img : channel-icon 클래스 내 바로 오는 img 태그
+                    -->
+                    <div class="video-info-grid">
+                        <div class="channel-icon">
+                            <img class="user-icon" src="assets/icon/user-icon.svg" />
+                        </div>
+                        <div class="video-info">
+                            <p class="video-title">빵빵이의 포장마차~!</p>
+                            <p class="video-author">빵빵이의 일상</p> 
+                            <p class="video-stats">조회수 830만회 &#183; 4개월전</p> <!-- &#183; : HTML 특수문자 중 middel dot (·)-->
+                        </div>
+                    </div>
+                </div> 
+                <div class="video-preview">
+                    <div class="thumnail-row">
+                        <img class="thumnail" src="assets/image/thumnail.png" />
+                        <div class="video-time">3:51</div>
+                    </div>
+
+                    <div class="video-info-grid">
+                        <div class="channel-icon">
+                            <img class="user-icon" src="assets/icon/user-icon.svg" />
+                        </div>
+                        <div class="video-info">
+                            <p class="video-title">빵빵이의 포장마차~!</p>
+                            <p class="video-author">빵빵이의 일상</p> 
+                            <p class="video-stats">조회수 830만회 &#183; 4개월전</p> <!-- &#183; : HTML 특수문자 중 middel dot (·)-->
+                        </div>
+                    </div>
+                </div>           
+            </section>
         </main>
     </body>
 </html>
