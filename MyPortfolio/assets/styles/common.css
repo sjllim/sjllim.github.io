@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+}
+
+h2 { color: #b382f0; padding: 5% 0; }
+
+.up-button {
+    background-color: #b382f0;
+    padding:2%;
+
+    position:sticky;
+    bottom:0;
+    float: right;
+}
